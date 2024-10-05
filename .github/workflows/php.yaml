@@ -38,3 +38,20 @@ jobs:
       - shell: bash
         run: |
           composer show --platform
+
+  test3:
+    name: test3
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+
+      - shell: bash
+        run: |
+          composer show --platform
