@@ -1,0 +1,13 @@
+{
+    "name": "indragunawan/test-setup-php",
+    "authors": [
+        {
+            "name": "Indra Gunawan",
+            "email": "hello@indra.my.id"
+        }
+    ],
+    "require": {
+        "symfony/console": "^7.1",
+        "symfony/dotenv": "^7.1"
+    }
+}
