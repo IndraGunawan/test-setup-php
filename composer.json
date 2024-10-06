@@ -10,5 +10,8 @@
         "php": ">=8.2",
         "symfony/console": "^7.1",
         "symfony/dotenv": "^7.1"
+    },
+    "config": {
+        "bump-after-update": true
     }
 }
