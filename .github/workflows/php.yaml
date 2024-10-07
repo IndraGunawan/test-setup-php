@@ -1,0 +1,61 @@
+name: PHP
+on: [pull_request]
+jobs:
+  test1:
+    name: test1
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: IndraGunawan/shivammathur-setup-php@read-ext-from-composer-file
+        with:
+          php-version: 8.3
+          extensions: none
+          coverage: xdebug
+          tools: symfony:5.9.1
+
+      - shell: bash
+        run: |
+          php --version
+          php -m
+          which get
+          get --help
+
+  # test2:
+  #   name: test2
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
+
+  #     - name: Setup PHP
+  #       uses: shivammathur/setup-php@v2
+  #       with:
+  #         php-version: 8.3
+  #         extensions: none
+
+  #     - shell: bash
+  #       run: |
+  #         composer show --platform
+
+  # test3:
+  #   name: test3
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
+
+  #     - name: Setup PHP
+  #       uses: shivammathur/setup-php@v2
+  #       with:
+  #         php-version: 8.3
+  #         extensions: redis
+
+  #     - shell: bash
+  #       run: |
+  #         composer show --platform
