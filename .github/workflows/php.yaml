@@ -21,6 +21,8 @@ jobs:
         run: |
           php --version
           php -m
+          which get
+          get --help
 
   # test2:
   #   name: test2
