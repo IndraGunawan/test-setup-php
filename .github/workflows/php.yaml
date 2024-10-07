@@ -10,49 +10,44 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: 8.3
-          tools: phpunit-bridge
-          extensions: none, mbstring, xml, ctype, iconv, intl, pdo_sqlite, pgsql, mbstring, xml, ctype, iconv, intl, pdo_sqlite, pgsql
-          coverage: xdebug
-
-      - shell: bash
-        run: |
-          composer show --platform
-
-  test2:
-    name: test2
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+        uses: IndraGunawan/shivammathur-setup-php@read-ext-from-composer-file
         with:
           php-version: 8.3
           extensions: none
+          coverage: xdebug
 
-      - shell: bash
-        run: |
-          composer show --platform
+  # test2:
+  #   name: test2
+  #   runs-on: ubuntu-latest
 
-  test3:
-    name: test3
-    runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+  #     - name: Setup PHP
+  #       uses: shivammathur/setup-php@v2
+  #       with:
+  #         php-version: 8.3
+  #         extensions: none
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: 8.3
-          extensions: redis
+  #     - shell: bash
+  #       run: |
+  #         composer show --platform
 
-      - shell: bash
-        run: |
-          composer show --platform
+  # test3:
+  #   name: test3
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
+
+  #     - name: Setup PHP
+  #       uses: shivammathur/setup-php@v2
+  #       with:
+  #         php-version: 8.3
+  #         extensions: redis
+
+  #     - shell: bash
+  #       run: |
+  #         composer show --platform
