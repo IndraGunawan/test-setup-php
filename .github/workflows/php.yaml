@@ -16,6 +16,11 @@ jobs:
           extensions: none
           coverage: xdebug
 
+      - shell: bash
+        run: |
+          php --version
+          php -m
+
   # test2:
   #   name: test2
   #   runs-on: ubuntu-latest
